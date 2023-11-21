@@ -1,34 +1,22 @@
 package myrmi.server;
 
+import lombok.Getter;
+import lombok.Setter;
 import myrmi.Remote;
 
 import java.io.Serializable;
 
 public class RemoteObjectRef implements Serializable, Remote {
-    private String host;
+
+    @Getter
+    private final String host;
+    @Getter
+    @Setter
     private int port;
-    private int objectKey;
-    private String interfaceName;
-
-    public String getHost() {
-        return host;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public int getObjectKey() {
-        return objectKey;
-    }
-
-    public String getInterfaceName() {
-        return interfaceName;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
+    @Getter
+    private final int objectKey;
+    @Getter
+    private final String interfaceName;
 
     public RemoteObjectRef(String host, int port, int objectKey, String interfaceName) {
         this.host = host;
@@ -43,7 +31,6 @@ public class RemoteObjectRef implements Serializable, Remote {
         this.objectKey = ref.objectKey;
         this.interfaceName = ref.interfaceName;
     }
-
 
     @Override
     public String toString() {

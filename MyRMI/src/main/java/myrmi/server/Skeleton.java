@@ -1,25 +1,29 @@
 package myrmi.server;
 
+import lombok.Getter;
+import lombok.Setter;
 import myrmi.Remote;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Skeleton extends Thread {
+
     static final int BACKLOG = 5;
-    private Remote remoteObj;
-
-    private String host;
+    @Getter
+    private final Remote remoteObj;
+    @Getter
+    private final String host;
+    @Getter
+    @Setter
     private int port;
-    private int objectKey;
-
-    public int getPort() {
-        return port;
-    }
+    @Getter
+    private final int objectKey;
+    private final ExecutorService threadPool;
 
     public Skeleton(Remote remoteObj, RemoteObjectRef ref) {
         this(remoteObj, ref.getHost(), ref.getPort(), ref.getObjectKey());
@@ -31,18 +35,28 @@ public class Skeleton extends Thread {
         this.host = host;
         this.port = port;
         this.objectKey = objectKey;
-        this.setDaemon(false);
+        this.setDaemon(false);  // set to user thread
+        this.threadPool = Executors.newFixedThreadPool(10);
     }
 
     @Override
     public void run() {
-        /*TODO: implement method here
+        /*done: implement method here
          * You need to:
          * 1. create a server socket to listen for incoming connections
          * 2. use a handler thread to process each request (use SkeletonReqHandler)
          *  */
-
-        throw new NotImplementedException();
+        try {
+            InetAddress bindAddr = InetAddress.getByName(getHost());
+            ServerSocket server = new ServerSocket(getPort(), BACKLOG, bindAddr);
+            setPort(server.getLocalPort());
+            while (true) {
+                Socket client = server.accept();
+                threadPool.submit(new SkeletonReqHandler(client, getRemoteObj(), getObjectKey()));
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
