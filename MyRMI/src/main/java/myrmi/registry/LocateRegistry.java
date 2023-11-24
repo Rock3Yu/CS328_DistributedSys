@@ -38,7 +38,7 @@ public class LocateRegistry {
      * but we still need to wrap around the lookup() method
      */
     public static Registry createRegistry(int port) throws RemoteException {
-        //done: Notice here the registry can only bind to 127.0.0.1, can you extend that? ans: see the method below
+        // done: Notice here the registry can only bind to 127.0.0.1, can you extend that? ans: see the method below
         return createRegistry("127.0.0.1", port);
     }
 
