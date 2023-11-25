@@ -43,9 +43,7 @@ public class LocateRegistry {
     }
 
     public static Registry createRegistry(String host, int port) throws RemoteException {
-        if (port <= 0) {
-            port = Registry.REGISTRY_PORT;
-        }
+        if (port <= 0) port = Registry.REGISTRY_PORT;
         Registry registry = new RegistryImpl(port);
         return (Registry) Proxy.newProxyInstance(
                 Registry.class.getClassLoader(),

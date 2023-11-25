@@ -12,6 +12,7 @@ public class Client {
 
         System.out.println(test.hello());
         System.out.println(test2.hello());
+        System.out.println("1111");
         System.out.println(test2.addInt(30, 8));
         System.out.println(test2.addInt());
         test2.modify();

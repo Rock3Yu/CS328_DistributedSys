@@ -40,13 +40,14 @@ public class SkeletonReqHandler extends Thread {
          *  */
         ReturnMsg returnMsg = new ReturnMsg();
         returnMsg.setObjectKey(this.objectKey);
-
         // receive from stub
-        try (ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
+        try {
+            // "in" can not be in try(), it will close both "in" and "socket"
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             InvocationMsg invocationMsg = (InvocationMsg) in.readObject();
             objectKey = invocationMsg.getObjectKey();
-            methodName = invocationMsg.getMethod().getName();
-            argTypes = invocationMsg.getMethod().getParameterTypes();
+            methodName = invocationMsg.getMethodName();
+            argTypes = invocationMsg.getParameterTypes();
             args = invocationMsg.getArgs();
             Method method = obj.getClass().getDeclaredMethod(methodName, argTypes);
             if (this.objectKey != objectKey) returnMsg.setStatus(-1);  // invocation error
@@ -59,16 +60,19 @@ public class SkeletonReqHandler extends Thread {
         } catch (IOException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException |
                  IllegalAccessException e) {
             returnMsg.setStatus(0);  // exception thrown
-            System.err.println(e.toString());
+            System.err.println("SkeletonReqHandler");
+            e.printStackTrace();
+//            System.err.println(e.toString());
         }
 
         // send to stub
         try (ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream())) {
             out.writeObject(returnMsg);
             out.flush();
-            socket.close();
         } catch (IOException e) {
-            System.err.println(e.toString());
+            System.err.println("SkeletonReqHandler");
+            e.printStackTrace();
+//            System.err.println(e.toString());
         }
     }
 }

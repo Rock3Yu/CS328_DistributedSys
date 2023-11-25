@@ -36,21 +36,39 @@ public class StubInvocationHandler implements InvocationHandler, Serializable {
          *  2. get result back and return to caller transparently
          * */
         Object res = null;
-        try (Socket socket = new Socket(host, port);
-             ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-             ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
+        try (Socket socket = new Socket(host, port)) {
             // send to skeleton
-            InvocationMsg invocationMsg = new InvocationMsg(objectKey, method, args);
+            InvocationMsg invocationMsg = new InvocationMsg(objectKey, method.getName(), method.getParameterTypes(), args);
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
             out.writeObject(invocationMsg);
             out.flush();
+
             // receive from skeleton
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
             ReturnMsg returnMsg = (ReturnMsg) in.readObject();
             res = returnMsg.getResult();
             return res;
         } catch (IOException e) {
-            System.err.println(e.toString());
+//            System.err.println(e.toString());
+            System.err.println("StubInvocationHandler");
+            e.printStackTrace();
         }
         return res;
+
+//        Object result = null;
+//        Socket client = new Socket(host, port);
+//
+//        InvocationMsg msgFromStub = new InvocationMsg(objectKey, method.getName(), method.getParameterTypes(), args);
+//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(client.getOutputStream());
+//        objectOutputStream.writeObject(msgFromStub); //send to Skeleton
+//        objectOutputStream.flush();
+//
+//        ObjectInputStream objectInputStream = new ObjectInputStream(client.getInputStream());
+//        Object readObj = objectInputStream.readObject();// read from Skeleton
+//
+//        ReturnMsg msgFromSkeleton = (ReturnMsg) readObj;
+//        result = msgFromSkeleton.getResult();
+//        return result;
     }
 
 }

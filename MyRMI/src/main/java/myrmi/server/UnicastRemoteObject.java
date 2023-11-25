@@ -31,15 +31,17 @@ public class UnicastRemoteObject implements Remote, java.io.Serializable {
         int objectKey = obj.hashCode();
         Skeleton skeleton = new Skeleton(obj, host, port, objectKey);
         skeleton.start();
-        while (skeleton.getState() != Thread.State.RUNNABLE) {
-            try {
-                Thread.sleep(100);  // wait until the skeleton thread running
-            } catch (InterruptedException ignored) {
-            }
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            System.err.println("UnicastRemoteObject");
+            e.printStackTrace();
+//            System.err.println(e.toString());
         }
         String interfaceName = "Remote";
         if (obj.getClass().getInterfaces().length > 0) interfaceName = obj.getClass().getInterfaces()[0].getName();
-        RemoteObjectRef ref = new RemoteObjectRef(host, port, objectKey, interfaceName);
+        int remotePort = skeleton.getPort();
+        RemoteObjectRef ref = new RemoteObjectRef(host, remotePort, objectKey, interfaceName);
         return Util.createStub(ref);
     }
 }

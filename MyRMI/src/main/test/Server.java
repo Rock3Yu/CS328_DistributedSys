@@ -13,11 +13,15 @@ public class Server {
             Remote test2 = new TestImpl2();
             Remote stub = UnicastRemoteObject.exportObject(test);
             Remote stub2 = UnicastRemoteObject.exportObject(test2);
+
+
             registry.bind("test", stub);
             registry.bind("test2", stub2);
             //Remote remote = UnicastRemoteObject.exportObject(r);
         } catch (RemoteException | AlreadyBoundException e) {
-            System.err.println(e.toString());
+            System.err.println("Server");
+            e.printStackTrace();
+//            System.err.println(e.toString());
         }
 
     }

@@ -16,9 +16,12 @@ public class RegistryStubInvocationHandler implements InvocationHandler {
     private RemoteObjectRef registryRef;
     private Registry registryStub;
 
+
     public RegistryStubInvocationHandler(String host, int port) {
-        this.registryRef = new RemoteObjectRef(host, port, 0, "myrmi.registry.Registry");
-        registryStub = (Registry) Util.createStub(this.registryRef);
+
+        registryRef = new RemoteObjectRef(host, port, 0, "myrmi.registry.Registry");
+        registryStub = (Registry) Util.createStub(registryRef);
+//        registryStub = Util.createRegistryStub(registryRef);
     }
 
     @Override
@@ -26,6 +29,7 @@ public class RegistryStubInvocationHandler implements InvocationHandler {
             throws RemoteException, AlreadyBoundException, NotBoundException, Throwable {
         Object result;
         try {
+//            System.out.println("next line blocked");
             result = method.invoke(registryStub, args);
             System.out.println("RegistryStub invoke " + method.getName());
         } catch (InvocationTargetException e) {

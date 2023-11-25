@@ -12,6 +12,8 @@ import java.lang.reflect.Method;
 @AllArgsConstructor
 public class InvocationMsg implements Serializable {
     private int objectKey;
-    private Method method;
+//    private Method method;  // not serializable
+    private String methodName;
+    private Class<?>[] parameterTypes;
     private Object[] args;
 }

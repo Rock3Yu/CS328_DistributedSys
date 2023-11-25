@@ -59,8 +59,7 @@ public class RegistryImpl implements Registry {
     }
 
     public static void main(String[] args) {
-        final int regPort = (args.length >= 1) ? Integer.parseInt(args[0])
-                : Registry.REGISTRY_PORT;
+        final int regPort = (args.length >= 1) ? Integer.parseInt(args[0]) : Registry.REGISTRY_PORT;
         RegistryImpl registry;
         try {
             registry = new RegistryImpl(regPort);
