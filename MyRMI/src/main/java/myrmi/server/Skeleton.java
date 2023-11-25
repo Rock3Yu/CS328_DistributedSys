@@ -11,17 +11,13 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@Getter
+@Setter
 public class Skeleton extends Thread {
-
     static final int BACKLOG = 5;
-    @Getter
     private final Remote remoteObj;
-    @Getter
     private final String host;
-    @Getter
-    @Setter
     private int port;
-    @Getter
     private final int objectKey;
     private final ExecutorService threadPool;
 

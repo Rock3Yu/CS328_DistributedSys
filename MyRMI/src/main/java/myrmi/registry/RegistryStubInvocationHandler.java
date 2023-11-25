@@ -23,7 +23,8 @@ public class RegistryStubInvocationHandler implements InvocationHandler {
 
 
     @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws RemoteException, AlreadyBoundException, NotBoundException, Throwable {
+    public Object invoke(Object proxy, Method method, Object[] args)
+            throws RemoteException, AlreadyBoundException, NotBoundException, Throwable {
         Object result;
         try {
             result = method.invoke(this.registryStub, args);

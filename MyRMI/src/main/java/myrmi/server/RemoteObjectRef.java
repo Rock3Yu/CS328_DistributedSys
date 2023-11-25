@@ -1,11 +1,13 @@
 package myrmi.server;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import myrmi.Remote;
 
 import java.io.Serializable;
 
+@AllArgsConstructor
 public class RemoteObjectRef implements Serializable, Remote {
 
     @Getter
@@ -17,13 +19,6 @@ public class RemoteObjectRef implements Serializable, Remote {
     private final int objectKey;
     @Getter
     private final String interfaceName;
-
-    public RemoteObjectRef(String host, int port, int objectKey, String interfaceName) {
-        this.host = host;
-        this.port = port;
-        this.objectKey = objectKey;
-        this.interfaceName = interfaceName;
-    }
 
     public RemoteObjectRef(RemoteObjectRef ref) {
         this.host = ref.host;

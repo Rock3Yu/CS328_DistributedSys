@@ -2,7 +2,8 @@ package myrmi.server;
 
 import myrmi.Remote;
 import myrmi.exception.RemoteException;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import static myrmi.server.Util.createStub;
 
 
 public class UnicastRemoteObject implements Remote, java.io.Serializable {
@@ -26,11 +27,23 @@ public class UnicastRemoteObject implements Remote, java.io.Serializable {
     }
 
     /**
-     * 1. create a skeleton of the given object ``obj'' and bind with the address ``host:port''
-     * 2. return a stub of the object ( Util.createStub() )
+     * done
+     *  1. create a skeleton of the given object ''obj'' and bind with the address ''host:port''
+     *  2. return a stub of the object ( Util.createStub() )
      **/
     public static Remote exportObject(Remote obj, String host, int port) throws RemoteException {
-        //TODO: finish here
-        throw new NotImplementedException();
+        int objectKey = obj.hashCode();
+        Skeleton skeleton = new Skeleton(obj, host, port, objectKey);
+        skeleton.start();
+        while (skeleton.getState() != Thread.State.RUNNABLE) {
+            try {
+                Thread.sleep(100);  // wait until the skeleton thread running
+            } catch (InterruptedException ignored) {
+            }
+        }
+        String interfaceName = "Remote";
+        if (obj.getClass().getInterfaces().length > 0) interfaceName = obj.getClass().getInterfaces()[0].getName();
+        RemoteObjectRef ref = new RemoteObjectRef(host, port, objectKey, interfaceName);
+        return createStub(ref);
     }
 }
