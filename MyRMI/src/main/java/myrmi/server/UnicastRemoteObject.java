@@ -3,9 +3,6 @@ package myrmi.server;
 import myrmi.Remote;
 import myrmi.exception.RemoteException;
 
-import static myrmi.server.Util.createStub;
-
-
 public class UnicastRemoteObject implements Remote, java.io.Serializable {
     int port;
 
@@ -26,8 +23,7 @@ public class UnicastRemoteObject implements Remote, java.io.Serializable {
         return exportObject(obj, "127.0.0.1", port);
     }
 
-    /**
-     * done
+    /* done
      *  1. create a skeleton of the given object ''obj'' and bind with the address ''host:port''
      *  2. return a stub of the object ( Util.createStub() )
      **/
@@ -44,6 +40,6 @@ public class UnicastRemoteObject implements Remote, java.io.Serializable {
         String interfaceName = "Remote";
         if (obj.getClass().getInterfaces().length > 0) interfaceName = obj.getClass().getInterfaces()[0].getName();
         RemoteObjectRef ref = new RemoteObjectRef(host, port, objectKey, interfaceName);
-        return createStub(ref);
+        return Util.createStub(ref);
     }
 }

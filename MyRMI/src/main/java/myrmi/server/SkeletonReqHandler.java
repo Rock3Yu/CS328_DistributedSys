@@ -29,7 +29,7 @@ public class SkeletonReqHandler extends Thread {
         Class<?>[] argTypes;
         Object[] args;
         Object result;
-        /* TODO: implement method here, You need to:
+        /* done: implement method here, You need to:
          *  1. handle requests from stub, receive invocation arguments, deserialization
          *  2. get result by calling the real object, and handle different cases
          *  Hint: you can use an int to represent the cases:

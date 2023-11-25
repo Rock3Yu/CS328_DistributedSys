@@ -1,16 +1,20 @@
 package myrmi.server;
 
 import myrmi.Remote;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import myrmi.registry.Registry;
 
-import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;
 
 public class Util {
     public static Remote createStub(RemoteObjectRef ref) {
-        // TODO: finish here, instantiate an StubInvocationHandler for ref and then return a stub
-        throw new NotImplementedException();
+        // done: finish here, instantiate an StubInvocationHandler for ref and then return a stub
+        StubInvocationHandler stubInvocationHandler = new StubInvocationHandler(ref);
+        Object stub = Proxy.newProxyInstance(
+                Registry.class.getClassLoader(),
+                new Class[]{Registry.class},
+                stubInvocationHandler
+        );
+        return (Remote) stub;
     }
-
-
 }

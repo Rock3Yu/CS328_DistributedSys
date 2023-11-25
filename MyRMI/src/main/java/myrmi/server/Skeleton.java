@@ -37,10 +37,10 @@ public class Skeleton extends Thread {
 
     @Override
     public void run() {
-        /*done: implement method here
-         * You need to:
-         * 1. create a server socket to listen for incoming connections
-         * 2. use a handler thread to process each request (use SkeletonReqHandler)
+        /* done: implement method here
+         *  You need to:
+         *  1. create a server socket to listen for incoming connections
+         *  2. use a handler thread to process each request (use SkeletonReqHandler)
          *  */
         try {
             InetAddress bindAddr = InetAddress.getByName(getHost());
