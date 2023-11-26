@@ -36,7 +36,6 @@ public class UnicastRemoteObject implements Remote, java.io.Serializable {
         } catch (InterruptedException e) {
             System.err.println("UnicastRemoteObject");
             e.printStackTrace();
-//            System.err.println(e.toString());
         }
         String interfaceName = "Remote";
         if (obj.getClass().getInterfaces().length > 0) interfaceName = obj.getClass().getInterfaces()[0].getName();

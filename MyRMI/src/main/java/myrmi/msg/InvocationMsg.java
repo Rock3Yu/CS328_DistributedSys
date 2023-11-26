@@ -5,14 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.lang.reflect.Method;
 
 @Getter
 @Setter
 @AllArgsConstructor
 public class InvocationMsg implements Serializable {
     private int objectKey;
-//    private Method method;  // not serializable
     private String methodName;
     private Class<?>[] parameterTypes;
     private Object[] args;

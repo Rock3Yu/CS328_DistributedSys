@@ -62,7 +62,6 @@ public class SkeletonReqHandler extends Thread {
             returnMsg.setStatus(0);  // exception thrown
             System.err.println("SkeletonReqHandler");
             e.printStackTrace();
-//            System.err.println(e.toString());
         }
 
         // send to stub
@@ -72,7 +71,6 @@ public class SkeletonReqHandler extends Thread {
         } catch (IOException e) {
             System.err.println("SkeletonReqHandler");
             e.printStackTrace();
-//            System.err.println(e.toString());
         }
     }
 }
