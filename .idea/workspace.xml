@@ -5,12 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30658dcd-79d8-4d16-b428-f536d9b57183" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MyRMI/src/main/java/myrmi/registry/LocateRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyRMI/src/main/java/myrmi/registry/LocateRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/12013027_余坤屹_A2/CS328_DistributedSys-main.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/LOGO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/checkstyle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/java_structure.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test_client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test_service.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test_structure.png.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/report.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyRMI/src/main/java/myrmi/msg/InvocationMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyRMI/src/main/java/myrmi/msg/InvocationMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyRMI/src/main/resources/[DDL_updated]Assignment_2_Instructions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/[DDL_updated]Assignment_2_Instructions.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,6 +44,9 @@
         <option name="jdkForImporter" value="1.8" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -41,9 +64,12 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowCheckStyle.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rock/Project/CS328/assignments",
+    "last_opened_file_path": "/Users/rock/Project/CS328/assignments/MyRMI/src/main/test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,13 +78,28 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.25632185",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "settings.editor.selected.configurable": "org.infernus.idea.checkstyle.CheckStyleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/MyRMI/src/main/test" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="myrmi.web" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Client">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="MyRMI" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Service" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Service" />
       <module name="MyRMI" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -66,7 +107,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.test" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Service" />
       </list>
     </recent_temporary>
   </component>
@@ -80,7 +122,12 @@
       <updated>1700847337955</updated>
       <workItem from="1700847338925" duration="590000" />
       <workItem from="1700848010069" duration="198000" />
-      <workItem from="1700848221742" duration="668000" />
+      <workItem from="1700848221742" duration="771000" />
+      <workItem from="1700849001660" duration="2000" />
+      <workItem from="1700891823810" duration="8669000" />
+      <workItem from="1700900992748" duration="8167000" />
+      <workItem from="1700978031297" duration="9367000" />
+      <workItem from="1700988917828" duration="1320000" />
     </task>
     <servers />
   </component>
@@ -100,6 +147,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MyRMI/src/main/test/Server.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
