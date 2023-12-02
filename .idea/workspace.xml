@@ -5,19 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30658dcd-79d8-4d16-b428-f536d9b57183" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/12013027_余坤屹_A2/CS328_DistributedSys-main.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/LOGO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/checkstyle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/java_structure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test_client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test_service.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/imgs/test_structure.png.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/report.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyRMI/src/main/java/myrmi/msg/InvocationMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/MyRMI/src/main/java/myrmi/msg/InvocationMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyRMI/src/main/resources/[DDL_updated]Assignment_2_Instructions.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/MyRMI/src/main/resources/[DDL_updated]Assignment_2_Instructions.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/.ipynb_checkpoints/Main-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/.ipynb_checkpoints/Untitled1-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/Assignment_3_Instructions.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/GB.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/Main.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/out/._SUCCESS.crc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/out/.part-00000-ce535a53-c7ab-4bc4-ba01-8e1093901fb0-c000.csv.crc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/out/1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/out/_SUCCESS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SparkProcessing/parking_data_sz.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,29 +58,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ToolWindowCheckStyle.ShowToolbar": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rock/Project/CS328/assignments/MyRMI/src/main/test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.25632185",
-    "settings.editor.selected.configurable": "org.infernus.idea.checkstyle.CheckStyleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowCheckStyle.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rock/Project/CS328/assignments/MyRMI/src/main/test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.25632185&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.infernus.idea.checkstyle.CheckStyleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/MyRMI/src/main/test" />
@@ -128,6 +127,7 @@
       <workItem from="1700900992748" duration="8167000" />
       <workItem from="1700978031297" duration="9367000" />
       <workItem from="1700988917828" duration="1320000" />
+      <workItem from="1701534595836" duration="439000" />
     </task>
     <servers />
   </component>
