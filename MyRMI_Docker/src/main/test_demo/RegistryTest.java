@@ -1,7 +1,8 @@
 import myrmi.exception.RemoteException;
 import myrmi.registry.LocateRegistry;
+import myrmi.registry.Registry;
 
-public class Registry {
+public class RegistryTest {
     public static void main(String[] args) {
         try {
             LocateRegistry.createRegistry("0.0.0.0");
@@ -11,6 +12,5 @@ public class Registry {
             System.exit(1);
         }
         System.out.println("RMI Registry is running...");
-
     }
 }

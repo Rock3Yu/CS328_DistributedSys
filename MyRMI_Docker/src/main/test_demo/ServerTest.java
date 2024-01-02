@@ -2,9 +2,9 @@ import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;
 import myrmi.server.UnicastRemoteObject;
 
-public class Server {
+public class ServerTest {
 
-    public Server() {
+    public ServerTest() {
     }
 
     public static void main(String[] args) {

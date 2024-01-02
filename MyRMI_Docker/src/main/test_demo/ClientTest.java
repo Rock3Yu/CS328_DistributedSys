@@ -1,31 +1,34 @@
 import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;
 
-public class ClientDemo {
+public class ClientTest {
     private static Payment stub = null;
 
-    private ClientDemo() {
+    private ClientTest() {
     }
 
     public static void main(String[] args) {
-
-//        double payment;
+        //  double payment;
         double principal = 80000;
         double annualInterest = .065;
         int years = 15;
+
         try {
+            // step (a) get the registry by its service name
             Registry reg;
             if (args.length == 1) {
                 reg = LocateRegistry.getRegistry(args[0]);
             } else {
                 reg = LocateRegistry.getRegistry();
             }
+            // step (b) lookup the remote object
             stub = (Payment) reg.lookup("Mortgage");
-
         } catch (Exception e) {
             System.err.println("Client exception thrown: " + e.toString());
             e.printStackTrace();
         }
+
+        // step (c) invoke remote methods
         if (args.length == 3) {
             try {
                 principal = Double.parseDouble(args[0]);
@@ -47,13 +50,13 @@ public class ClientDemo {
     }
 
     public static void print(double pr, double annRate, int years) {
-        double mpayment = 0;
+        double payment;
         try {
-            mpayment = stub.calculatePayment(pr, annRate, years);
+            payment = stub.calculatePayment(pr, annRate, years);
             System.out.println("The principal is $" + (int) pr);
             System.out.println("The annual interest rate is " + annRate * 100 + "%");
             System.out.println("The term is " + years + " years");
-            System.out.println("Your monthly payment is $" + mpayment);
+            System.out.println("Your monthly payment is $" + payment);
         } catch (Exception e) {
             System.out.println("[Exception] Remote method exception thrown: " + e.getMessage());
         }
