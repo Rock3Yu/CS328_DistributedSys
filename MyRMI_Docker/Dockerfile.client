@@ -1,9 +1,0 @@
-# syntax=docker/dockerfile:1
-FROM sgrio/java:jdk_8_alpine
-MAINTAINER Kunyi Yu (12013027@mail.sustech.edu.cn)
-RUN apt-get update && apt-get install -y maven
-COPY pom.xml /usr/local/client/pom.xml
-COPY /scr/* /usr/local/client/src
-WORKDIR /usr/local/client
-RUN mvn package
-CMD ["java","-cp", "target/MyRMI_Docker_Client-1.0-SNAPSHOT.jar", "myrmi/client/ClientMain"

@@ -2,14 +2,14 @@ version: '3'
 
 services:
   registry:
-    image: 'rock3yu/cs328_a4_registry'
+    image: 'rock3yu/cs328_a4_registry:v-0.1'
     ports:
       - '9000:9000'
     networks:
       - myrmi-net
 
   server:
-    image: 'rock3yu/cs328_a4_server'
+    image: 'rock3yu/cs328_a4_server:v-0.1'
     depends_on:
       registry:
         condition: service_started
@@ -17,7 +17,7 @@ services:
       - myrmi-net
 
   client:
-    image: 'rock3yu/cs328_a4_client'
+    image: 'rock3yu/cs328_a4_client:v-0.1'
     depends_on:
       server:
         condition: service_started
