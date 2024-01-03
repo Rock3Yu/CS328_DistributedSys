@@ -16,7 +16,7 @@ public class RegistryImpl implements Registry {
      * and create a skeleton on given port
      **/
     public RegistryImpl(int port) throws RemoteException {
-        Skeleton skeleton = new Skeleton(this, "127.0.0.1", port, 0);
+        Skeleton skeleton = new Skeleton(this, REGISTRY_HOST, port, 0);
         skeleton.start();
     }
 

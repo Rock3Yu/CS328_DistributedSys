@@ -2,6 +2,7 @@ package myrmi.server;
 
 import myrmi.Remote;
 import myrmi.exception.RemoteException;
+import myrmi.registry.Registry;
 
 public class UnicastRemoteObject implements Remote, java.io.Serializable {
     int port;
@@ -20,7 +21,7 @@ public class UnicastRemoteObject implements Remote, java.io.Serializable {
     }
 
     public static Remote exportObject(Remote obj, int port) throws RemoteException {
-        return exportObject(obj, "127.0.0.1", port);
+        return exportObject(obj, Registry.REGISTRY_HOST, port);
     }
 
     /* done

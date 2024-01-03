@@ -1,10 +1,10 @@
 import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;
 
-public class ClientTest {
+public class ClientMain {
     private static Payment stub = null;
 
-    private ClientTest() {
+    private ClientMain() {
     }
 
     public static void main(String[] args) {

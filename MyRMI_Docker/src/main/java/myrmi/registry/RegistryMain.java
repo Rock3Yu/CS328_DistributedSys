@@ -1,11 +1,11 @@
-import myrmi.exception.RemoteException;
-import myrmi.registry.LocateRegistry;
-import myrmi.registry.Registry;
+package myrmi.registry;
 
-public class RegistryTest {
+import myrmi.exception.RemoteException;
+
+public class RegistryMain {
     public static void main(String[] args) {
         try {
-            LocateRegistry.createRegistry("0.0.0.0");
+            LocateRegistry.createRegistry(Registry.REGISTRY_HOST);
         } catch (RemoteException e) {
             e.printStackTrace();
             System.out.println(e.getMessage());
