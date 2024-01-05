@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  registry:
+    image: 'rock3yu/cs328_a4_registry'
+#    ports:
+#      - '9000:9000'
+    networks:
+      - myrmi-net
+
+  server:
+    image: 'rock3yu/cs328_a4_server'
+    depends_on:
+      registry:
+        condition: service_started
+#    ports:
+#      - '9000:9000'
+    networks:
+      - myrmi-net
+    environment:
+      - REGISTRY_HOST=registry
+      - SERVER_PORT=9000
+
+  client:
+    image: 'rock3yu/cs328_a4_client'
+    depends_on:
+      registry:
+        condition: service_started
+      server:
+        condition: service_started
+#    ports:
+#      - '9000:9000'
+    networks:
+      - myrmi-net
+    environment:
+      - REGISTRY_HOST=registry
+
+networks:
+  myrmi-net:
+    driver: bridge

@@ -69,6 +69,8 @@
                 <configuration>
                     <archive>
                         <manifest>
+<!--                            <mainClass>myrmi.registry.RegistryMain</mainClass>-->
+<!--                            <mainClass>myrmi.server.ServerMain</mainClass>-->
                             <mainClass>myrmi.client.ClientMain</mainClass>
                         </manifest>
                     </archive>

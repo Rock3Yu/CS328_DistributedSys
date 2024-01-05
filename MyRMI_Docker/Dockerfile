@@ -3,7 +3,6 @@ WORKDIR /usr/src/app
 COPY pom.xml .
 RUN mvn dependency:go-offline
 COPY src/main/java/myrmi src/main/java/myrmi
-#COPY . .
 RUN mvn package
 
 FROM openjdk:8

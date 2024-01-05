@@ -4,13 +4,22 @@ import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;
 import myrmi.server.Payment;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+
 public class ClientMain {
     private static Payment stub = null;
 
     private ClientMain() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnknownHostException {
+        args = new String[]{
+                InetAddress.getByName(System.getenv("REGISTRY_HOST")).getHostAddress(),
+        };
+        System.out.println(Arrays.toString(args));
+
         //  double payment;
         double principal = 80000;
         double annualInterest = .065;

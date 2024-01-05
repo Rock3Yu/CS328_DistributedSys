@@ -2,14 +2,24 @@ package myrmi.server;
 
 import myrmi.registry.LocateRegistry;
 import myrmi.registry.Registry;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
 
 public class ServerMain {
 
     public ServerMain() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnknownHostException {
         // Usage: java demo.Server <registry host> <server host> <server port>
+        args = new String[]{
+                InetAddress.getByName(System.getenv("REGISTRY_HOST")).getHostAddress(),
+                InetAddress.getLocalHost().getHostAddress(),
+                System.getenv("SERVER_PORT"),
+        };
+        System.out.println(Arrays.toString(args));
+
         try {
             int serverPort = 0;
             String registryHost = null;
