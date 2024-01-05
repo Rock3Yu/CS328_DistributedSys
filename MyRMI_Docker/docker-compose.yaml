@@ -3,8 +3,6 @@ version: '3'
 services:
   registry:
     image: 'rock3yu/cs328_a4_registry'
-#    ports:
-#      - '9000:9000'
     networks:
       - myrmi-net
 
@@ -13,8 +11,6 @@ services:
     depends_on:
       registry:
         condition: service_started
-#    ports:
-#      - '9000:9000'
     networks:
       - myrmi-net
     environment:
@@ -28,8 +24,6 @@ services:
         condition: service_started
       server:
         condition: service_started
-#    ports:
-#      - '9000:9000'
     networks:
       - myrmi-net
     environment:
